@@ -10,6 +10,14 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá id{self}'
 
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def metodo_classe(cls):
+        return f'{cls} olhos: {cls.olhos}'
+
 if __name__ == '__main__':
     lucas = Pessoa(nome='Lucas de Moura Quadros',idade=27)
     yago = Pessoa(nome='Yago de Moura Quadros',idade=26)
@@ -29,6 +37,8 @@ if __name__ == '__main__':
     Pessoa.olhos = 1
     print(lucas.__dict__,lucas.olhos)
 
+    print(Pessoa.metodo_estatico(),lucas.metodo_estatico())
+    print(Pessoa.metodo_classe(),lucas.metodo_classe())
 
 """
 To import in Python Console:
