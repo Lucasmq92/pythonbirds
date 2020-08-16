@@ -1,4 +1,7 @@
 class Pessoa:
+
+    olhos = 2
+
     def __init__(self,*filhos,nome=None,idade=27):
         self.nome = nome
         self.idade = idade
@@ -18,11 +21,14 @@ if __name__ == '__main__':
     for filho in luiz.filhos:
         print(filho.nome)
 
-    #atributos dinâmicos(não é boa prática):
-    lucas.pol = 'Esquerda'      #atributo criado apenas para esse objeto
-    del luiz.filhos             #atributo removido apenas para esse objeto
-    print(lucas.__dict__)       #imprime atributos do objeto
-    print(luiz.__dict__)
+    lucas.olhos = 3
+    print(Pessoa.olhos)
+    print(lucas.__dict__)
+    del lucas.olhos
+    print(lucas.__dict__,lucas.olhos)
+    Pessoa.olhos = 1
+    print(lucas.__dict__,lucas.olhos)
+
 
 """
 To import in Python Console:
