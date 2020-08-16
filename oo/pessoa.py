@@ -13,9 +13,17 @@ if __name__ == '__main__':
     laura = Pessoa(nome='Laura Quadros',idade=16)
     clarinha = Pessoa(nome='Maria Clara de Quadros',idade=5)
     luiz = Pessoa(lucas,yago,laura,clarinha,nome='Luiz Alberto de Quadros',idade=55)
+
     print("\nFilhos do Luiz:\n")
     for filho in luiz.filhos:
         print(filho.nome)
+
+    #atributos dinâmicos(não é boa prática):
+    lucas.pol = 'Esquerda'      #atributo criado apenas para esse objeto
+    del luiz.filhos             #atributo removido apenas para esse objeto
+    print(lucas.__dict__)       #imprime atributos do objeto
+    print(luiz.__dict__)
+
 """
 To import in Python Console:
 from oo.pessoa import Pessoa
